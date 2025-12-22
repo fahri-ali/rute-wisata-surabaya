@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rute Wisata Surabaya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <button id="theme-toggle" class="theme-toggle">
+    🌙 Dark Mode
+    </button>
+</head>
+<body>
+    <div id="gallery-modal" class="gallery-modal">
+        <span class="gallery-close" onclick="closeGallery()">×</span>
+            <img id="gallery-image" class="gallery-image">
+        <div class="gallery-caption" id="gallery-caption"></div>
+
+        <button class="gallery-btn prev" onclick="prevImage()">❮</button>
+        <button class="gallery-btn next" onclick="nextImage()">❯</button>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>🗺️ Rute Wisata Surabaya</h1>
+            <p>Jelajahi 10 Destinasi Iconic Kota Pahlawan</p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">10</div>
+                <div class="stat-label">📍 Total Destinasi</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">~38 km</div>
+                <div class="stat-label">🚗 Total Jarak</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">~2 jam</div>
+                <div class="stat-label">⏱️ Durasi Perjalanan</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Rp 8.000</div>
+                <div class="stat-label">🎫 Harga Tiket</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="sidebar">
+                <div class="route-title">
+                    🕌 Rute Dimulai dari Masjid Al-Akbar
+                </div>
+                
+                <div id="destinations-container"></div>
+            </div>
+            
+            <div class="map-container">
+                <div id="map"></div>
+                
+                <div class="map-info">
+                    <h3>📊 Info Perjalanan</h3>
+                    <div class="info-item">
+                        <span class="info-icon">🎯</span>
+                        <span>Rute Melingkar (Circular)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🚌</span>
+                        <span>Bus Medium (35 Penumpang)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⚡</span>
+                        <span>Kecepatan: 20 km/jam</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎫</span>
+                        <span>Tiket: Rp 8.000 / 2 Jam</span>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <div class="legend-title">🔖 Legenda</div>
+                    <div class="legend-item">
+                        <div class="legend-marker">1</div>
+                        <span>Titik Awal & Akhir</span>
+                    </div>
+                    <div class="legend-item">
+                        <div style="width: 30px; height: 4px; background: #667eea; margin-right: 10px; border-radius: 2px;"></div>
+                        <span>Jalur Perjalanan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
