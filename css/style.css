@@ -189,6 +189,7 @@ body {
     margin: 0 20px 20px 20px;
     border-radius: 8px;
     border: 2px dashed #ffc107;
+    flex-direction: column; /* allow estimate text under the icon/time */
 }
 
 .arrow-icon {
@@ -203,9 +204,32 @@ body {
 }
 
 .distance-time {
-    margin-left: 15px;
+    margin-left: 0; /* center under the icon */
+    margin-top: 8px;
     font-weight: bold;
     color: #495057;
+}
+
+.segment-estimate {
+    margin-top: 10px;
+    padding: 10px 14px;
+    max-width: 420px;
+    text-align: center;
+    border-radius: 8px;
+    background: rgba(102,126,234,0.06);
+    color: var(--text-main);
+    font-size: 0.95em;
+    line-height: 1.35;
+}
+.segment-estimate .estimate-main {
+    font-weight: 700;
+    color: #2b6cb0;
+    margin-bottom: 6px;
+}
+.segment-estimate .estimate-note {
+    color: #6c757d;
+    font-style: italic;
+    font-size: 0.9em;
 }
 
 .map-container {
@@ -223,7 +247,6 @@ body {
     top: 20px;
     right: 20px;
     background: var(--bg-card);
-    /* background: white; */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
@@ -243,9 +266,37 @@ body {
     margin-bottom: 10px;
     padding: 8px;
     background: var(--bg-card);
+    /* background: #f8f9fa; */
     border-radius: 6px;
 }
 
+/* Button variant for info items to match regular .info-item styling */
+.info-btn {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: inherit;      /* keep same background as .info-item */
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 8px;             /* match .info-item padding */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    color: inherit;
+    font: inherit;
+}
+
+.info-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.12);
+    border-radius: 6px;
+}
+
+.info-btn:hover {
+    background: rgba(102,126,234,0.03);
+}
 .info-icon {
     margin-right: 10px;
     font-size: 1.2em;
@@ -366,6 +417,22 @@ body {
     flex-direction: column;
 }
 
+/* GPS stop icon (divIcon) */
+.gps-icon { display: block; }
+.gps-icon svg { display: block; }
+.gps-icon { cursor: grab; }
+.gps-icon:active { cursor: grabbing; }
+
+/* GPS image icon (if using assets/gps.png) */
+.gps-img { display: block; width: 34px; height: 34px; cursor: grab; }
+.gps-img:active { cursor: grabbing; }
+
+/* small responsive tweak so icon stays visible on dark map */
+@media (max-width: 768px) {
+    .gps-icon svg { width: 24px; height: 24px; }
+    .gps-img img { width: 24px; height: 24px; }
+}
+
 .gallery-image {
     width: 100%;
     max-width: 1000px;
@@ -442,5 +509,4 @@ body {
     #map {
         height: 600px;
     }
-
 }
